@@ -47,6 +47,72 @@ ActionListener{ static Xk xk;
 	    	 in.close();
 	    	 str=new String(buffer);
 	    }
+	    
+if(e.getSource()==button1) //如果按下第一个按钮
+			{ta1.append("姓名："+t1.getText()+"\n"+
+			"学号："+t2.getText()+"\n"+"性别："
+			+cg.getSelectedCheckbox().getLabel()+
+			"\n");
+		byte[] se= new byte[4096];
+		StringBuffer st= new StringBuffer();
+			if(c1.isSelected() && e.getSource()==button1)
+				{ta1.append( "课程：" + c1.getLabel()+" "+p.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),p);
+				StringBuffer s1=new StringBuffer();
+				s1.append(students);
+				s1.append(p);
+				st.append(s1);
+			}
+			if(c2.isSelected() && e.getSource()==button1) {
+				ta1.append( "课程：" + c2.getLabel()+" "+q.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),q);
+				StringBuffer s2=new StringBuffer();
+				
+				s2.append(q);
+				st.append(s2);
+			}
+			if(c3.isSelected() && e.getSource()==button1) {
+				ta1.append( "课程：" + c3.getLabel()+" "+r.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),r);
+				StringBuffer s3=new StringBuffer();
+				
+				s3.append(r);
+				st.append(s3);
+			}
+			if(c4.isSelected() && e.getSource()==button1) {
+				ta1.append( "课程：" + c4.getLabel()+" "+s.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),s);
+				StringBuffer s4=new StringBuffer();
+					
+				s4.append(s);
+				st.append(s4);
+			}	
+		try {
+				FileWriter fw=new FileWriter("D:\\JAVA\\课程信息.txt");
+				fw.write(st.toString());
+				fw.close();
+			} 
+				catch (IOException n) 
+					{
+					n.printStackTrace();
+					}
+		    }
+			ta1.append("\n");
+			if(e.getSource()==button2){
+					System.exit(0);
+			}
+			if(e.getSource()==button4){
+			System.exit(0);
+		    }
+		    if(e.getSource()==button3) {
+			ta2.append("教师姓名："+t3.getText()+"\n"+
+			"课程："+t4.getText()+"\n"+"上课地点："+t6.getText()
+			+"\n"+"\n"+"编号："+t9.getText()
+			+"\n"+"学分："+t10.getText()+"\n");
+			StringBuffer t=new StringBuffer("教师姓名："+t3.getText()+"\n"+
+					"课程："+t4.getText()+"\n"+"上课地点："+t6.getText()
+					+"\n"+"\n"+"编号："+t9.getText()
+					+"\n"+"学分："+t10.getText());
 # 六、实验结果
 ![](https://github.com/houzhidong/shiyan5/blob/master/yuxing.png)
 
