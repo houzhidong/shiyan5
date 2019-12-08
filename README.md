@@ -28,7 +28,7 @@
 ![](https://github.com/houzhidong/shiyan5/blob/master/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg)
 # 五、核心代码
 ~~~
-##### 1、ActionListener{ static Xk xk;
+ 1、ActionListener{ static Xk xk;
 	Container c;
 	JLabel label1;JLabel label2;JLabel label3;JLabel label4,label5;JLabel label6;
 	JLabel label7;JLabel label8;JLabel label9;JLabel label10,label11;JLabel label12;JLabel label13;
@@ -38,7 +38,7 @@
 	JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
 	CheckboxGroup cg;
 	JCheckBox c1,c2,c3,c4;//建立GUI窗口	
-##### 2、try {
+ 2、try {
 	    	File name1 = new File("D:\\JAVA" + File.separator + "java选课系统.txt");//写入文件
 	    	 FileInputStream in=new FileInputStream(name1);
 	    	 byte[] buffer=new byte[2048];
@@ -47,7 +47,7 @@
 	    	 str=new String(buffer);
 	    }
 	    
-##### 3、if(e.getSource()==button1) //如果按下第一个按钮
+ 3、if(e.getSource()==button1) //如果按下第一个按钮
 			{ta1.append("姓名："+t1.getText()+"\n"+
 			"学号："+t2.getText()+"\n"+"性别："
 			+cg.getSelectedCheckbox().getLabel()+
@@ -114,7 +114,7 @@
 			StringBuffer t=new StringBuffer("教师姓名："+t3.getText()+"\n"+
 					"课程："+t4.getText()+"\n"+"上课地点："+t6.getText()
 					+"\n"+"\n"+"编号："+t9.getText()
-					+"\n"+"学分："+t10.getText());
+					+"\n"+"学分："+t10.getText());//输入的信息写入文件中
 ~~~
 # 六、实验结果
 ![](https://github.com/houzhidong/shiyan5/blob/master/yuxing.png)
@@ -125,7 +125,5 @@
 
 ![](https://github.com/houzhidong/shiyan5/blob/master/3.png)
 # 七、实验感想
-
-
-
+  这次实验综合性较强，是将之前的实验内容结合在一起，做完这次实验后我更加深入的了解了GUI和文件的输入输出。Java编程需要有一定的逻辑，也需要对很多的函数熟练运用，这就需要自己在百度上搜索查找和运用，学会了GUI的容器、组件等。也能更加熟练地使用GitHub以及README的排版了，对Java有了更深的理解。希望以后还能更加深入的了解Java。
 
