@@ -1,0 +1,7 @@
+package xueshengxuankexitong;
+
+public class Peoples {
+	 String id;
+	 String xm;
+	 String xb;
+}
