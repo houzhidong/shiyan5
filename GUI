@@ -1,0 +1,229 @@
+package xueshengxuankexitong;
+import java.awt.*;
+import java.io.*;
+import xueshengxuankexitong.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.File;    
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;  
+import xueshengxuankexitong.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class GUI extends JFrame implements
+	ActionListener{ static Xk xk;
+	Container c;
+	JLabel label1;JLabel label2;JLabel label3;JLabel label4,label5;JLabel label6;
+	JLabel label7;JLabel label8;JLabel label9;JLabel label10,label11;JLabel label12;JLabel label13;
+	JButton button1,button2;
+	JButton button3,button4;
+	TextArea ta1,ta2;
+	JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+	CheckboxGroup cg;
+	JCheckBox c1,c2,c3,c4;
+	public GUI(){
+		super("学生选课");
+		label1=new JLabel("请输入个人信息和所选课程，完成后单击确定，退出请按取消 ");
+		label7=new JLabel("请输入开设的课程和信息，完成后单击确定，退出请按取消。");
+		label2=new JLabel("学生姓名：");
+		label8=new JLabel("教师姓名：");
+		label3=new JLabel("性别:"); 
+		cg = new CheckboxGroup(); 
+		label9=new JLabel("课程名称：");
+		label6=new JLabel("学号：");
+		label5=new JLabel("课程：");
+		label11=new JLabel("上课地点：");
+		label12=new JLabel("编号：");
+		label13=new JLabel("学分：");
+		c1=new JCheckBox("线代");
+		c2=new JCheckBox("大物");
+		c3=new JCheckBox("Java");
+		c4=new JCheckBox("马原");
+		ta1=new TextArea(17,20);
+		ta2=new TextArea(17,20);
+		button1=new JButton("确定");
+		button2=new JButton("取消");
+		button3=new JButton("确定");
+		button4=new JButton("取消");
+		t1=new JTextField("",5);
+		t2=new JTextField("",10);
+		t3=new JTextField("",5);
+		t4=new JTextField("",5);
+		t5=new JTextField("",5);
+		t6=new JTextField("",5);
+		t7=new JTextField("",5);
+		t8=new JTextField("",5);
+		t9=new JTextField("",5);
+		t10=new JTextField("",5);
+		setBounds(400,100,625,600);
+		try {UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		}catch(Exception e){}
+		c=getContentPane();	
+		c.setBackground(Color.gray);
+		c.setLayout(new FlowLayout(FlowLayout.LEFT));
+		c.add(label1);
+		c.add(new JLabel("                            "));
+		c.add(label7);
+		c.add(new JLabel("                                      "));
+		c.add(label2);
+		c.add(t1);
+		c.add(label3);
+		c.add(new Checkbox("男", cg, true)); 
+		c.add(new Checkbox("女", cg, false));
+		c.add(new JLabel("           "));
+		c.add(label8);
+		c.add(t3);
+		c.add(new JLabel("                          "));
+		c.add(label6);
+		c.add(t2);
+		c.add(new JLabel("                       "));
+		c.add(label9);
+		c.add(t4);
+		c.add(new JLabel("   "));
+		c.add(new JLabel("               "));
+		c.add(new JLabel("                                              "));
+		c.add(label11);
+		c.add(t6);
+		c.add(new JLabel("                         "));
+		c.add(label5);c.add(c1);c.add(c2);c.add(c3);c.add(c4);
+		c.add(new JLabel("     "));
+		c.add(label12);
+		c.add(t9);
+		c.add(new JLabel("                                                 "));
+		c.add(label13);
+		c.add(t10);
+		c.add(new JLabel("                           "));
+		c.add(ta1);
+		c.add(new JLabel("     "));
+		c.add(ta2);
+		c.add(new JLabel("                               "));
+		c.add(button1);
+		c.add(new JLabel(""));
+        c.add(button2);
+		c.add(new JLabel("               "));
+		c.add(button3);
+		c.add(new JLabel(""));
+		c.add(button4);
+		setVisible(true);
+		button1.addActionListener(this);
+		button2.addActionListener(this);
+		button3.addActionListener(this);
+		button4.addActionListener(this);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	public void actionPerformed(ActionEvent e){
+		Xk p = null;
+		Xk q = null;
+		Xk r = null;
+		Xk s = null;
+	    Students students = null;
+	    Xk xk;
+	    String str="";
+	    
+	   
+	    try {
+	    	File name1 = new File("D:\\JAVA" + File.separator + "java选课系统.txt");
+	    	 FileInputStream in=new FileInputStream(name1);
+	    	 byte[] buffer=new byte[2048];
+	    	 in.read(buffer);
+	    	 in.close();
+	    	 
+	    	 str=new String(buffer);
+	    	
+	    } catch (IOException e1) {
+	    	// TODO Auto-generated catch block
+	    	e1.printStackTrace();
+	    } 
+	    String b[] = str.split(",");
+    	p  = new Xk(b[0],b[1],b[2],b[3]);
+    	q  = new Xk(b[4],b[5],b[6],b[7]);
+    	r  = new Xk(b[8],b[9],b[10],b[11]);
+    	s  = new Xk(b[12],b[13],b[14],b[15]);
+	    
+		if(e.getSource()==button1) //如果按下第一个按钮
+			{ta1.append("姓名："+t1.getText()+"\n"+
+			"学号："+t2.getText()+"\n"+"性别："
+			+cg.getSelectedCheckbox().getLabel()+
+			"\n");
+		byte[] se= new byte[4096];
+		StringBuffer st= new StringBuffer();
+			if(c1.isSelected() && e.getSource()==button1)
+				{ta1.append( "课程：" + c1.getLabel()+" "+p.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),p);
+				StringBuffer s1=new StringBuffer();
+				s1.append(students);
+				s1.append(p);
+				st.append(s1);
+			}
+			if(c2.isSelected() && e.getSource()==button1) {
+				ta1.append( "课程：" + c2.getLabel()+" "+q.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),q);
+				StringBuffer s2=new StringBuffer();
+				
+				s2.append(q);
+				st.append(s2);
+			}
+			if(c3.isSelected() && e.getSource()==button1) {
+				ta1.append( "课程：" + c3.getLabel()+" "+r.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),r);
+				StringBuffer s3=new StringBuffer();
+				
+				s3.append(r);
+				st.append(s3);
+			}
+			if(c4.isSelected() && e.getSource()==button1) {
+				ta1.append( "课程：" + c4.getLabel()+" "+s.toString()+"\n");
+				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),s);
+				StringBuffer s4=new StringBuffer();
+					
+				s4.append(s);
+				st.append(s4);
+			}	
+		try {
+				FileWriter fw=new FileWriter("D:\\JAVA\\课程信息.txt");
+				fw.write(st.toString());
+				fw.close();
+			} 
+				catch (IOException n) 
+					{
+					n.printStackTrace();
+					}
+		    }
+			ta1.append("\n");
+			if(e.getSource()==button2){
+					System.exit(0);
+			}
+			if(e.getSource()==button4){
+			System.exit(0);
+		    }
+		    if(e.getSource()==button3) {
+			ta2.append("教师姓名："+t3.getText()+"\n"+
+			"课程："+t4.getText()+"\n"+"上课地点："+t6.getText()
+			+"\n"+"\n"+"编号："+t9.getText()
+			+"\n"+"学分："+t10.getText()+"\n");
+			StringBuffer t=new StringBuffer("教师姓名："+t3.getText()+"\n"+
+					"课程："+t4.getText()+"\n"+"上课地点："+t6.getText()
+					+"\n"+"\n"+"编号："+t9.getText()
+					+"\n"+"学分："+t10.getText());
+		try {
+				FileWriter fw=new FileWriter("D:\\JAVA\\课程.txt");
+				fw.write(t.toString());
+				fw.close();
+				} 
+			    catch (IOException n) 
+				{
+				n.printStackTrace();
+				}
+		
+		
+		}
+		
+		xk = new Xk(t4.getText(),t3.getText(),
+					t6.getText(),t7.getText());
+}
+public static void main(String[] args){
+	   GUI d=new GUI();
+}
+}
