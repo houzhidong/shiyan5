@@ -25,7 +25,7 @@
 7、	提交截止时间：12月8日。
 # 三、实验过程
 # 四、流程图
-![image](https://github.com/houzhidong/shiyan5/blob/master/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg)
+![](https://github.com/houzhidong/shiyan5/blob/master/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg)
 
 
 
