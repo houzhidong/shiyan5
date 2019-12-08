@@ -1,0 +1,24 @@
+package xueshengxuankexitong;
+
+public class Students extends Peoples{
+	Xk xk;
+	Xk a;
+	
+     public Students(String xm,String j8,String xb,Xk a) {
+		this.id= j8;
+		this.xm= xm;
+		this.xb= xb;
+		this.xk= a;
+		}
+     public String toString() {
+		return "Student(学生信息):  姓名：" + xm
+		+ "    学号：" + id + "   性别：" + xb ;
+		}
+    public void setXm(String xm) {
+       this.xm= xm;	
+}
+
+	public void setCd(Xk b) {
+		xk = b;	
+	}	
+}
