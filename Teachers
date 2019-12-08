@@ -1,0 +1,19 @@
+package xueshengxuankexitong;
+
+public class Teachers extends Peoples {
+String kc;
+String getKc() {
+	return kc;
+}
+public Teachers(String id,String xm,String xb,String kc) {
+this.id= id;
+this.xm= xm;
+this.xb= xb;
+this.kc= kc;
+}
+public String toString() {
+return "Teacher(老师信息):  姓名：" + xm
++ "    学号：" + id + "   性别：" + xb + "     所选课程：" + kc;
+}
+
+}
