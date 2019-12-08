@@ -23,11 +23,30 @@
 ##### 5、基于Github.com提交实验，包括实验SRC源文件夹程序、README.MD实验报告文档。
 
 # 三、实验过程
-   建立新的类GUI，通过调用之前的Xk、Students和Peoples的类进行对GUI的编辑。运用各种窗口组件，来建立可行的GUI窗口。首先建立各个不同的组件，给各个不同的组件进行赋值。再在容器中引用他们。最后在文本框中输出要输出的内容。新建课程文件来储存课程的信息，在用户选择课程后再从文件中提取相应的内容，在写到新建的另一个文件。开课将用户所输入的信息储存到文件中
+   建立新的类GUI，通过调用之前的Xk、Students和Peoples的类进行对GUI的编辑。运用各种窗口组件，来建立可行的GUI窗口。先建立各个不同的组件，给各个不同的组件进行赋值。再在容器中引用他们。最后在文本框中输出要输出的内容。新建课程文件来储存课程的信息，在用户选择课程后再从文件中提取相应的内容，在写到新建的另一个文件。开课将用户所输入的信息储存到文件中
 # 四、流程图
 ![](https://github.com/houzhidong/shiyan5/blob/master/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg)
 # 五、核心代码
+ActionListener{ static Xk xk;
+	Container c;
+	JLabel label1;JLabel label2;JLabel label3;JLabel label4,label5;JLabel label6;
+	JLabel label7;JLabel label8;JLabel label9;JLabel label10,label11;JLabel label12;JLabel label13;
+	JButton button1,button2;
+	JButton button3,button4;
+	TextArea ta1,ta2;
+	JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+	CheckboxGroup cg;
+	JCheckBox c1,c2,c3,c4;//建立GUI窗口
+	
 
+ try {
+	    	File name1 = new File("D:\\JAVA" + File.separator + "java选课系统.txt");//写入文件
+	    	 FileInputStream in=new FileInputStream(name1);
+	    	 byte[] buffer=new byte[2048];
+	    	 in.read(buffer);
+	    	 in.close();
+	    	 str=new String(buffer);
+	    }
 # 六、实验结果
 ![](https://github.com/houzhidong/shiyan5/blob/master/yuxing.png)
 
