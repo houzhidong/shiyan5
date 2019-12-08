@@ -1,0 +1,31 @@
+package xueshengxuankexitong;
+
+public class Xk {
+String name;
+String place;
+String xuefen;
+String id;
+String getName() {
+	return name;}
+String getPlace() {
+	return place;
+}
+String getXuefen() {
+	return xuefen;
+}
+String getId() {
+	return id;
+}
+
+public Xk(String name,String place,String xuefen,String id){
+	this.name= name;
+	this.place= place;
+	this.xuefen= xuefen;
+	this.id= id;
+}
+
+public String toString() {
+	return "姓名"+name+"教室"+place+"学分"+xuefen+"学号"+id;
+}
+
+}
