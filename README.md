@@ -27,7 +27,8 @@
 # 四、流程图
 ![](https://github.com/houzhidong/shiyan5/blob/master/%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg)
 # 五、核心代码
-ActionListener{ static Xk xk;
+~~~
+##### 1、ActionListener{ static Xk xk;
 	Container c;
 	JLabel label1;JLabel label2;JLabel label3;JLabel label4,label5;JLabel label6;
 	JLabel label7;JLabel label8;JLabel label9;JLabel label10,label11;JLabel label12;JLabel label13;
@@ -36,10 +37,8 @@ ActionListener{ static Xk xk;
 	TextArea ta1,ta2;
 	JTextField t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
 	CheckboxGroup cg;
-	JCheckBox c1,c2,c3,c4;//建立GUI窗口
-	
-
- try {
+	JCheckBox c1,c2,c3,c4;//建立GUI窗口	
+##### 2、try {
 	    	File name1 = new File("D:\\JAVA" + File.separator + "java选课系统.txt");//写入文件
 	    	 FileInputStream in=new FileInputStream(name1);
 	    	 byte[] buffer=new byte[2048];
@@ -48,12 +47,13 @@ ActionListener{ static Xk xk;
 	    	 str=new String(buffer);
 	    }
 	    
-if(e.getSource()==button1) //如果按下第一个按钮
+##### 3、if(e.getSource()==button1) //如果按下第一个按钮
 			{ta1.append("姓名："+t1.getText()+"\n"+
 			"学号："+t2.getText()+"\n"+"性别："
 			+cg.getSelectedCheckbox().getLabel()+
 			"\n");
 		byte[] se= new byte[4096];
+		
 		StringBuffer st= new StringBuffer();
 			if(c1.isSelected() && e.getSource()==button1)
 				{ta1.append( "课程：" + c1.getLabel()+" "+p.toString()+"\n");
@@ -63,6 +63,8 @@ if(e.getSource()==button1) //如果按下第一个按钮
 				s1.append(p);
 				st.append(s1);
 			}
+			
+			
 			if(c2.isSelected() && e.getSource()==button1) {
 				ta1.append( "课程：" + c2.getLabel()+" "+q.toString()+"\n");
 				students = new Students(t1.getText(),t2.getText(),cg.getSelectedCheckbox().getLabel(),q);
@@ -113,6 +115,7 @@ if(e.getSource()==button1) //如果按下第一个按钮
 					"课程："+t4.getText()+"\n"+"上课地点："+t6.getText()
 					+"\n"+"\n"+"编号："+t9.getText()
 					+"\n"+"学分："+t10.getText());
+~~~
 # 六、实验结果
 ![](https://github.com/houzhidong/shiyan5/blob/master/yuxing.png)
 
